@@ -4,19 +4,19 @@ import { restaurants } from "../materials/mock.js";
 const root = document.getElementById("root");
 const reactRoot = createRoot(root);
 reactRoot.render(
-  restaurants.map((element) => (
+  restaurants.map((restaurant) => (
     <div className="restaurant" style={{ backgroundColor: "#ffebee" }}>
-      <h2>{element.name}</h2>
+      <h2>{restaurant.name}</h2>
       <h3>Menu</h3>
       <ul>
-        {element.menu.map((el) => (
-          <li>{el.name}</li>
+        {restaurant.menu.map((menu) => (
+          <li>{menu.name}</li>
         ))}
       </ul>
       <h3>Reviews</h3>
       <ul>
-        {element.reviews.map((el) => (
-          <li>{el.text}</li>
+        {restaurant.reviews.map((review) => (
+          <li>{review.text}</li>
         ))}
       </ul>
     </div>
