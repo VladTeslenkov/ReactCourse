@@ -10,21 +10,25 @@ export const RestaurantsPage = ({ restaurants }) => {
     restaurants[0].id
   );
   const selectedRestaurant = restaurants.find(
-    (r) => r.id === selectedRestaurantId
+    (restaurant) => restaurant.id === selectedRestaurantId
   );
 
   return (
     <div
-      style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        minHeight: "100vh",
+        backgroundColor: "#E30613",
+      }}
     >
-      <Header />
       <RestaurantList
         restaurants={restaurants}
+        selectedRestaurantId={selectedRestaurantId}
         onRestaurantSelect={setSelectedRestaurantId}
       />
       <div
         style={{
-          backgroundColor: "#E30613",
           textAlign: "center",
           alignItems: "center",
           paddingBottom: "20px",
@@ -38,8 +42,6 @@ export const RestaurantsPage = ({ restaurants }) => {
           {selectedRestaurant && <Reviews restaurant={selectedRestaurant} />}
         </div>
       </div>
-
-      <Footer />
     </div>
   );
 };

@@ -19,11 +19,11 @@ export const Counter = () => {
   return (
     <>
       <button className="decrement" onClick={decrement}>
-        <span>-</span>
+        -
       </button>
       <span style={{ margin: "3px 3px 3px 3px" }}>{value}</span>
       <button className="increment" onClick={increment}>
-        <span>+</span>
+        +
       </button>
     </>
   );
