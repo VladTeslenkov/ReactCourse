@@ -1,11 +1,10 @@
-import { useState } from "react";
-
-export const RestaurantList = ({ restaurants, onRestaurantSelect }) => {
-  const [selectedId, setSelectedId] = useState(restaurants[0].id);
-
+export const RestaurantList = ({
+  restaurants,
+  selectedRestaurantId,
+  onRestaurantSelect,
+}) => {
   const handleSelect = (id) => {
-    setSelectedId(id === selectedId ? selectedId : id);
-    onRestaurantSelect(id === selectedId ? selectedId : id);
+    onRestaurantSelect(id);
   };
 
   return (
@@ -23,7 +22,8 @@ export const RestaurantList = ({ restaurants, onRestaurantSelect }) => {
           key={restaurant.id}
           style={{
             border: "solid",
-            background: selectedId === restaurant.id ? "lightblue" : "white",
+            background:
+              selectedRestaurantId === restaurant.id ? "lightblue" : "white",
             padding: "30px 30px 30px 30px",
             fontSize: "20px",
           }}
