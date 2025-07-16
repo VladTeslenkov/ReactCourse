@@ -3,10 +3,6 @@ export const RestaurantList = ({
   selectedRestaurantId,
   onRestaurantSelect,
 }) => {
-  const handleSelect = (id) => {
-    onRestaurantSelect(id);
-  };
-
   return (
     <div
       style={{
@@ -27,7 +23,7 @@ export const RestaurantList = ({
             padding: "30px 30px 30px 30px",
             fontSize: "20px",
           }}
-          onClick={() => handleSelect(restaurant.id)}
+          onClick={() => onRestaurantSelect(restaurant.id)}
         >
           <h3>{restaurant.name}</h3>
         </button>

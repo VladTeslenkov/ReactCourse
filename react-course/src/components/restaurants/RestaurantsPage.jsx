@@ -4,6 +4,7 @@ import { Menu } from "./Menu";
 import { RestaurantList } from "./RestaurantList";
 import { useState } from "react";
 import { Reviews } from "./Reviews";
+import { RestaurantBody } from "./RestaurantBody";
 
 export const RestaurantsPage = ({ restaurants }) => {
   const [selectedRestaurantId, setSelectedRestaurantId] = useState(
@@ -27,21 +28,7 @@ export const RestaurantsPage = ({ restaurants }) => {
         selectedRestaurantId={selectedRestaurantId}
         onRestaurantSelect={setSelectedRestaurantId}
       />
-      <div
-        style={{
-          textAlign: "center",
-          alignItems: "center",
-          paddingBottom: "20px",
-          paddingTop: "20px",
-        }}
-      >
-        <div style={{ marginTop: "100px", fontSize: "30px" }}>
-          {selectedRestaurant && <Menu restaurant={selectedRestaurant} />}
-        </div>
-        <div style={{ marginTop: "100px", fontSize: "30px" }}>
-          {selectedRestaurant && <Reviews restaurant={selectedRestaurant} />}
-        </div>
-      </div>
+      <RestaurantBody selectedRestaurant={selectedRestaurant}/>
     </div>
   );
 };
